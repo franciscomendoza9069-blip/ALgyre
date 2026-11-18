@@ -42,3 +42,8 @@ The first setup downloads dependencies. Your data stays in `data/` on your compu
 Free for internal business operations under [PolyForm Internal Use 1.0.0](LICENSE). Internal modifications are permitted; redistribution, resale and offering it as a service to third parties are outside the license permissions.
 
 © 2026 Paco · [Author](https://github.com/franciscomendoza9069-blip) · [Changes](CHANGELOG.md)
+
+## How to Contribute
+
+To contribute to my project, you can test it, report issues, and suggest improvements — all with the goal of improving the final product. To collaborate on the project, contact me via email: francisco.mendoza9069@gmail.com. I accept donations: https://www.paypal.com/paypalme/gymapp
+

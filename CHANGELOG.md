@@ -2,6 +2,9 @@
 
 ## Versión de trabajo · 18 de noviembre de 2026
 
+- Portadas breves en inglés y castellano, galería con capturas reales del ejemplo e instalación en guías separadas.
+- Documentación agrupada en guías, notas técnicas e imágenes; accesos de Windows implementados en scripts/.
+- Cuentas, lectura de importaciones y esquema SQL agrupados en algyre_core/.
 - Revisión final: actualización de pypdf a 6.21.4 para corregir avisos de seguridad.
 - Primer arranque de Windows corregido para entornos sin librerías ni pip y actualización de dependencias al cambiar sus versiones.
 - Actividades puntuales con fechas compartidas y referencias distintas, manteniendo controles de duplicados.

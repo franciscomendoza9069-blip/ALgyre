@@ -5,7 +5,7 @@
 | Archivo o carpeta | Responsabilidad |
 | --- | --- |
 | `app.py` | Composición Flask, conexión autorizada al espacio y rutas HTTP |
-| `tenancy.py` | Cuentas, sesiones, empresas, correo opcional y administración |
+| `algyre_core/accounts.py` | Cuentas, sesiones, empresas, correo opcional y administración |
 | `manage.py` | Operaciones administrativas desde el servidor |
 | `algyre_core/environment.py` | Catálogo de actividades, alcances y unidades |
 | `algyre_core/ledger.py` | Validación, selección de factores, cálculo y estado del inventario |
@@ -13,7 +13,7 @@
 | `algyre_core/reporting.py` | PDF de instantáneas de informes |
 | `algyre_core/documents.py` | Lectura acotada de texto PDF |
 | `algyre_core/migrations.py` | Actualización transaccional de bases anteriores |
-| `import_workflow.py` | Lectura de Excel/CSV, columnas y plantilla |
+| `algyre_core/intake.py` | Lectura de Excel/CSV, columnas y plantilla |
 | `static/core.js` | Estado, primitivas y cliente HTTP |
 | `static/views.js` | Pantallas del inventario y acceso local |
 | `static/forms.js` | Formularios y selección de archivos |
@@ -21,6 +21,10 @@
 | `static/accounts.js` | Acceso multiempresa y administración |
 | `static/intake.js` | Asistente de importación y calidad |
 | `static/app.js` | Eventos globales y único punto de arranque |
+| `scripts/` | Accesos de Windows; los botones .cmd se conservan en la raíz |
+| `docs/guides/` | Instalación, uso y metodología |
+| `docs/technical/` | Arquitectura, verificación e historial de revisión |
+| `docs/images/` | Capturas con datos ficticios |
 | `tests/` | Pruebas aisladas con datos ficticios |
 | `deploy/` | Instalación, empaquetado, copias y supervisión |
 

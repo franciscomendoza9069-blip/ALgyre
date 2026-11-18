@@ -482,7 +482,7 @@ class AccountTests(unittest.TestCase):
 
     def test_bootstrap_requires_secret_and_only_one_admin(self):
         import secrets
-        from tenancy import digest, stamp
+        from algyre_core.accounts import digest, stamp
 
         c = algyre.app.test_client()
         token = secrets.token_urlsafe(32)

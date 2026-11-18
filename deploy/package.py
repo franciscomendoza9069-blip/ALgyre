@@ -10,26 +10,42 @@ target.parent.mkdir(exist_ok=True)
 with tarfile.open(target, "w:gz") as archive:
     for name in [
         "app.py",
-        "tenancy.py",
         "manage.py",
-        "import_workflow.py",
-        "schema.sql",
         "requirements-lock.txt",
         "requirements.txt",
         ".env.example",
         "README.md",
+        "README.es.md",
         "LICENSE",
         "NOTICE",
         "CHANGELOG.md",
         "Abrir ALgyre.cmd",
         "Cerrar ALgyre.cmd",
-        "abrir-algyre.ps1",
-        "cerrar-algyre.ps1",
     ]:
         archive.add(root / name, arcname=name)
-    for folder in ["static", "deploy", "tests", "algyre_core", "docs"]:
-        for path in sorted((root / folder).glob("*")):
-            if path.is_file() and path.suffix not in {".pyc", ".gz"}:
+    source_suffixes = {
+        ".py",
+        ".sql",
+        ".js",
+        ".cjs",
+        ".css",
+        ".html",
+        ".svg",
+        ".jpg",
+        ".png",
+        ".md",
+        ".sh",
+        ".ps1",
+        ".service",
+        ".timer",
+    }
+    for folder in ["static", "deploy", "tests", "algyre_core", "docs", "scripts"]:
+        for path in sorted((root / folder).rglob("*")):
+            if (
+                path.is_file()
+                and path.suffix in source_suffixes
+                and "__pycache__" not in path.parts
+            ):
                 archive.add(path, arcname=path.relative_to(root))
 print(target)
 

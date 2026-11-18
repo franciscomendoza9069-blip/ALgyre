@@ -21,7 +21,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from flask import Flask, Response, abort, g, jsonify, request, send_file, session
-import import_workflow as intake
+from algyre_core import intake
 
 from algyre_core.common import (
     now,
@@ -101,7 +101,7 @@ def connect(path=None):
 
 def initialize(path):
     with connect(path) as db:
-        schema = (ROOT / "schema.sql").read_text("utf-8")
+        schema = (ROOT / "algyre_core" / "schema.sql").read_text("utf-8")
         db.executescript(schema)
         migrate_ledger(db, path, schema)
         db.execute(
@@ -1023,7 +1023,7 @@ def restore():
     # Validate in staging using the real constraints before touching live data.
     stage = sqlite3.connect(":memory:")
     stage.row_factory = sqlite3.Row
-    stage.executescript((ROOT / "schema.sql").read_text("utf-8"))
+    stage.executescript((ROOT / "algyre_core" / "schema.sql").read_text("utf-8"))
     try:
         for table in TABLES:
             for r in payload["tables"][table]:
@@ -1202,7 +1202,7 @@ def seed_demo():
                     )
 
 
-from tenancy import Accounts
+from algyre_core.accounts import Accounts
 
 accounts = Accounts(app, lambda: DATA, initialize, LOCK)
 if MULTI:

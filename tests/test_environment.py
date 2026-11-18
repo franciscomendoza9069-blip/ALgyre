@@ -234,7 +234,7 @@ class EnvironmentTests(unittest.TestCase):
         self.post("consumptions", self.record())
         self.post("reports", dict(year=2026))
         path = algyre.DATA / "legacy.sqlite"
-        schema = (algyre.ROOT / "schema.sql").read_text("utf-8")
+        schema = (algyre.ROOT / "algyre_core" / "schema.sql").read_text("utf-8")
         schema = schema.replace(
             ",".join(repr(k) for k in ACTIVITIES),
             "'electricity','gas','diesel','petrol'",

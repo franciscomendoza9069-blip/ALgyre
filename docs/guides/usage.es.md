@@ -10,7 +10,7 @@ Empieza por una instalación y un mes. Comprueba cantidades y resultados antes d
 
 ## 2. Accede a tu espacio
 
-Descarga y descomprime el proyecto siguiendo el [README](../README.md). En Windows, abre **Abrir ALgyre.cmd**. En Linux o macOS, utiliza los comandos de instalación y arranque del README.
+Descarga y descomprime el proyecto siguiendo el [guía de instalación](install.es.md). En Windows, abre **Abrir ALgyre.cmd**. En Linux o macOS, utiliza los comandos de la guía de instalación.
 
 Abre **http://127.0.0.1:8765** en tu navegador. La primera vez, elige una contraseña local de al menos diez caracteres y repítela. No se pide correo ni registro. En las siguientes visitas introduces esa misma contraseña.
 
@@ -31,6 +31,8 @@ Un factor convierte actividad en emisiones. En **Factores**, registra valor, uni
 No inventes factores ni uses los de demostración con datos reales. Si falta uno adecuado, guarda la actividad pendiente. Revisa los límites y evita contar lo mismo dos veces.
 
 ## 5. Incorpora datos
+
+![Registro de consumos con datos ficticios](../images/activity.jpg)
 
 En **Consumos**, registra actividad manualmente o selecciona **Importar Excel o CSV**. La plantilla incluye categorías, unidades y ayuda.
 

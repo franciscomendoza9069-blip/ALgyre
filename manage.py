@@ -37,7 +37,7 @@ def main():
     if os.environ.get("ALGYRE_MODE") != "public":
         raise ValueError("Carga primero la configuración pública de ALgyre.")
     import app
-    from tenancy import email, password
+    from algyre_core.accounts import email, password
     from werkzeug.security import generate_password_hash
 
     service = app.accounts
@@ -48,7 +48,7 @@ def main():
         )
     elif args.command == "prepare-admin":
         import secrets
-        from tenancy import digest, stamp
+        from algyre_core.accounts import digest, stamp
 
         token = secrets.token_urlsafe(32)
         with service.db() as db:

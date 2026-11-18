@@ -1,6 +1,6 @@
 param([switch]$NoBrowser, [ValidateRange(1024, 65535)][int]$Port = 8765)
 $ErrorActionPreference = 'Stop'
-$algyreRoot = $PSScriptRoot
+$algyreRoot = Split-Path -Parent $PSScriptRoot
 $algyrePython = Join-Path $algyreRoot '.venv\Scripts\python.exe'
 $algyreUrl = "http://127.0.0.1:$Port"
 # This launcher always opens this folder's private installation.

@@ -20,7 +20,8 @@ if [[ -f /opt/algyre/app.py ]]; then
     systemctl stop algyre.service
     tar --exclude='.venv' -czf "/var/backups/algyre/code-$(date -u +%Y%m%dT%H%M%SZ).tar.gz" -C /opt/algyre .
 fi
-for file in app.py tenancy.py manage.py import_workflow.py schema.sql requirements-lock.txt; do install -m 0644 "$SOURCE/$file" "/opt/algyre/$file"; done
+for file in app.py manage.py requirements-lock.txt; do install -m 0644 "$SOURCE/$file" "/opt/algyre/$file"; done
+install -m 0644 "$SOURCE/algyre_core/schema.sql" /opt/algyre/algyre_core/schema.sql
 find "$SOURCE/algyre_core" -maxdepth 1 -type f -name '*.py' -exec install -m 0644 '{}' /opt/algyre/algyre_core/ \;
 find "$SOURCE/static" -maxdepth 1 -type f -exec install -m 0644 '{}' /opt/algyre/static/ \;
 find "$SOURCE/deploy" -maxdepth 1 -type f -exec install -m 0644 '{}' /opt/algyre/deploy/ \;

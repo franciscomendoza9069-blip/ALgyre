@@ -16,8 +16,10 @@ Revisión local del 18 de noviembre de 2026, con Python 3.14 en Windows.
 
 Se cubren acceso, sesiones, aislamiento entre empresas, importación, copias, informes, conversiones, clasificación por alcance y selección de factores. La migración se prueba con un libro antiguo que contiene credenciales, actividad calculada e informes, verificando conservación e integridad de relaciones.
 
-La revisión visual en navegador queda pendiente de comprobación manual. Esta evidencia corresponde a la versión local preparada: no acredita un despliegue de esta versión en un servidor ni una ejecución de los trabajos de GitHub Actions.
+Se han capturado y revisado las pantallas reales de resumen, consumos y apertura del asistente de importación usando exclusivamente el ejemplo ficticio. Están en [la galería](../gallery.md). Esto no sustituye la revisión manual de todos los recorridos. Esta evidencia corresponde a la versión local preparada; no acredita un despliegue de esta versión en un servidor.
+
+Después de reorganizar módulos, documentación y accesos de Windows, se ha comprobado el arranque del paquete extraído y el primer inicio, reapertura y cierre mediante Windows PowerShell 5. Las capturas no incluyen datos de una empresa real.
 
 La prueba numérica usa exclusivamente factores ficticios. Valida el funcionamiento del cálculo; no valida factores reales ni certifica la metodología particular de una empresa.
 
-Consulta los hallazgos y las correcciones en la [revisión final](REVISION_FINAL.md). Las comprobaciones de dependencias reflejan los avisos disponibles en la fecha de revisión; no garantizan ausencia de vulnerabilidades futuras.
+Consulta los hallazgos y las correcciones en la [revisión final](review.es.md). Las comprobaciones de dependencias reflejan los avisos disponibles en la fecha de revisión; no garantizan ausencia de vulnerabilidades futuras.

@@ -1,0 +1,10 @@
+[Unit]
+Description=Comprobar cada hora el certificado corto de IP de ALgyre
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=600
+Persistent=true
+
+[Install]
+WantedBy=timers.target

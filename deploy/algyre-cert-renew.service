@@ -1,0 +1,7 @@
+[Unit]
+Description=Renovar certificado de IP de ALgyre
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/algyre-certbot/bin/certbot renew --quiet --config-dir /etc/algyre-acme --work-dir /var/lib/algyre-acme --logs-dir /var/log/algyre-acme --deploy-hook "/usr/sbin/apache2ctl configtest && /usr/bin/systemctl reload apache2"

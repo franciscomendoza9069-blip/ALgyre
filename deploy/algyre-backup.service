@@ -1,0 +1,6 @@
+[Unit]
+Description=Copia diaria de las cuentas y empresas de ALgyre
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /opt/algyre/deploy/backup.sh

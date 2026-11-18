@@ -1,0 +1,27 @@
+[Unit]
+Description=ALgyre - empresas y sostenibilidad
+After=network.target
+
+[Service]
+Type=simple
+User=algyre
+Group=algyre
+WorkingDirectory=/opt/algyre
+EnvironmentFile=/etc/algyre.env
+ExecStart=/opt/algyre/.venv/bin/python /opt/algyre/app.py
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/algyre
+LimitNOFILE=4096
+MemoryHigh=384M
+MemoryMax=512M
+CPUQuota=100%
+TasksMax=32
+
+[Install]
+WantedBy=multi-user.target

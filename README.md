@@ -53,7 +53,7 @@ Set-Location $HOME
 ```
 
 ```powershell
-Invoke-WebRequest -Uri "https://github.com/franciscomendoza9069-blip/ALgyre/archive/refs/heads/main.zip" -OutFile "ALgyre.zip"
+Invoke-WebRequest -UseBasicParsing -Uri "https://github.com/franciscomendoza9069-blip/ALgyre/archive/refs/heads/main.zip" -OutFile "ALgyre.zip"
 ```
 
 ```powershell

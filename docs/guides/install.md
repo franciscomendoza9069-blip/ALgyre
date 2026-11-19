@@ -1,21 +1,66 @@
 # Install ALgyre on your computer
 
-[English](install.md) · [Castellano](install.es.md) · [Project home](../../README.md)
+## Start in three steps
 
-No signup, email address or external ALgyre server is required. You will choose a password that protects the application on your computer.
+These instructions are for a first installation on **Windows**. You need an Internet connection during setup.
 
-## Windows: double-click setup
+### 1. Install Python
 
-1. Download the project with **Code → Download ZIP** on GitHub.
-2. Extract the ZIP into a writable folder. Do not run files from inside the ZIP.
-3. Install **Python 3.11 or newer** from [python.org](https://www.python.org/downloads/). Select **Add Python to PATH** during setup.
-4. Double-click **Abrir ALgyre.cmd** in the extracted folder. The first start prepares the Python environment and downloads the required libraries.
-5. In your browser, choose a local password of at least ten characters or select **Explorar con datos de ejemplo** to explore fictional data.
+Open the Windows Start menu, type **PowerShell** and open it. Copy and paste this command, then press **Enter**:
 
-The Windows launcher opens **http://127.0.0.1:8765**. `127.0.0.1` refers to your own computer. Keep the application running while you work; close it using **Cerrar ALgyre.cmd**. Closing the browser tab alone does not stop the program.
+```powershell
+winget install --id Python.Python.3.14 --exact --source winget --scope user
+```
 
-The interface uses Spanish labels. Files in `scripts/` implement the launchers; you normally only need the two `.cmd` shortcuts in the main folder.
+This downloads and installs Python and adds it to PATH, allowing Windows to find it when ALgyre starts. Follow any installation prompts.
 
+**Once the installation finishes, close PowerShell and open a new window.** Then check:
+
+```powershell
+python --version
+```
+
+You should see **Python 3.14.x**.
+
+> If Windows does not recognise `winget`, install or update **App Installer** from the Microsoft Store, then reopen PowerShell.
+
+### 2. Download ALgyre
+
+In the new PowerShell window, run these commands one at a time:
+
+```powershell
+Set-Location $HOME
+```
+
+```powershell
+Invoke-WebRequest -Uri "https://github.com/franciscomendoza9069-blip/ALgyre/archive/refs/heads/main.zip" -OutFile "ALgyre.zip"
+```
+
+```powershell
+Expand-Archive -LiteralPath ".\ALgyre.zip" -DestinationPath "."
+```
+
+```powershell
+Set-Location ".\ALgyre-main"
+```
+
+These commands download the project, extract it into an **ALgyre-main** folder inside your Windows user folder, and open that folder in the terminal.
+
+> If an `ALgyre-main` folder already exists, use a different empty folder for this installation. Back up any existing ALgyre data before updating.
+
+### 3. Open ALgyre
+
+Run:
+
+```powershell
+& ".\Abrir ALgyre.cmd"
+```
+
+The first launch prepares the application and downloads its required libraries. This may take a few minutes. ALgyre will then open in your browser.
+
+Choose a local password or select **“Explorar con datos de ejemplo”** to explore fictional demonstration data. No registration or email address is required.
+
+Your records and documents stay in the `data/` folder inside your installation. For future visits, double-click **Abrir ALgyre.cmd**. To stop the application, use **Cerrar ALgyre.cmd**.
 ## Manual setup
 
 Open a terminal in the extracted project folder.

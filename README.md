@@ -22,12 +22,65 @@ Created by Paco to solve a need in his own company: keep consumption records, ev
 
 ## Start in three steps
 
-1. **Download:** select **Code → Download ZIP** and extract the folder.
-2. **Prepare:** install **Python 3.11+**, adding it to PATH on Windows.
-3. **Open:** on Windows, double-click **Abrir ALgyre.cmd**. For Linux/macOS or manual setup, follow the [installation guide](docs/guides/install.md).
+These instructions are for a first installation on **Windows**. You need an Internet connection during setup.
 
-The first setup downloads dependencies. Your data stays in `data/` on your computer. Choose a local password or explore the built-in demonstration.
+### 1. Install Python
 
+Open the Windows Start menu, type **PowerShell** and open it. Copy and paste this command, then press **Enter**:
+
+```powershell
+winget install --id Python.Python.3.14 --exact --source winget --scope user
+```
+
+This downloads and installs Python and adds it to PATH, allowing Windows to find it when ALgyre starts. Follow any installation prompts.
+
+**Once the installation finishes, close PowerShell and open a new window.** Then check:
+
+```powershell
+python --version
+```
+
+You should see **Python 3.14.x**.
+
+> If Windows does not recognise `winget`, install or update **App Installer** from the Microsoft Store, then reopen PowerShell.
+
+### 2. Download ALgyre
+
+In the new PowerShell window, run these commands one at a time:
+
+```powershell
+Set-Location $HOME
+```
+
+```powershell
+Invoke-WebRequest -Uri "https://github.com/franciscomendoza9069-blip/ALgyre/archive/refs/heads/main.zip" -OutFile "ALgyre.zip"
+```
+
+```powershell
+Expand-Archive -LiteralPath ".\ALgyre.zip" -DestinationPath "."
+```
+
+```powershell
+Set-Location ".\ALgyre-main"
+```
+
+These commands download the project, extract it into an **ALgyre-main** folder inside your Windows user folder, and open that folder in the terminal.
+
+> If an `ALgyre-main` folder already exists, use a different empty folder for this installation. Back up any existing ALgyre data before updating.
+
+### 3. Open ALgyre
+
+Run:
+
+```powershell
+& ".\Abrir ALgyre.cmd"
+```
+
+The first launch prepares the application and downloads its required libraries. This may take a few minutes. ALgyre will then open in your browser.
+
+Choose a local password or select **“Explorar con datos de ejemplo”** to explore fictional demonstration data. No registration or email address is required.
+
+Your records and documents stay in the `data/` folder inside your installation. For future visits, double-click **Abrir ALgyre.cmd**. To stop the application, use **Cerrar ALgyre.cmd**.
 ## Find your way
 
 | I want to… | Open |
